@@ -21,7 +21,7 @@
  *  @param tecla valor de tecla a evaluar
  *  @return la validez de la tecla ingresada
  */
-bool_t isValidTecla(gpioMap_t tecla)
+bool_t isValidTecla(gpioMap_t tecla);
 
 bool_t leerTecla(gpioMap_t tecla)
 {
@@ -42,9 +42,8 @@ bool_t leerTecla(gpioMap_t tecla)
 
 bool_t isValidTecla(gpioMap_t tecla)
 {
-	return (
-		tecla != TEC1 &&
-		tecla != TEC2 &&
-		tecla != TEC3 &&
-		tecla != TEC4)
+	return ((tecla == TEC1) ||
+			(tecla == TEC2) ||
+			(tecla == TEC3) ||
+			(tecla == TEC4) );
 }
