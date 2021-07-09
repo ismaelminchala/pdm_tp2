@@ -1,13 +1,8 @@
-/*
- * teclas.h
- *
- *  Created on: Jul 7, 2021
- *      Author: ismael
- */
+#ifndef _TECLAS_H_
+#define _TECLAS_H_
+
 #include "sapi.h"
-#ifndef TECLAS_H_
-#define TECLAS_H_
 
 bool_t leerTecla(gpioMap_t tecla);
 
-#endif /* TECLAS_H_ */
+#endif /* _TECLAS_H_ */
