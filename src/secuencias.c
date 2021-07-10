@@ -7,4 +7,28 @@
  */
 
 #include "secuencias.h"
+#include "led.h"
 
+void activarSecuencia(struct Secuencia_t* psecuencia, gpioMap_t *leds, tick_t *tiempos){
+	psecuencia->leds = leds;
+	psecuencia->tiempos = tiempos;
+	psecuencia->len = _countof(leds);
+	psecuencia->pos = 0;
+	psecuencia->sentido = false;
+	delayInit(&psecuencia->myDelay, psecuencia->tiempos[psecuencia->pos]);
+	apagarLeds();
+	encenderLed(psecuencia->leds[psecuencia->pos]);
+}
+
+void actualizarSecuencia(struct Secuencia_t* psecuencia){
+	if ( delayRead(&psecuencia->myDelay) ){
+		apagarLeds();
+		if (psecuencia->pos < psecuencia->len){
+			++psecuencia->pos;
+		} else{
+			psecuencia->pos = 0;
+		}
+		encenderLed(psecuencia->leds[psecuencia->pos]);
+		delayWrite(&psecuencia->myDelay, psecuencia->tiempos[psecuencia->pos]);
+	}
+}

@@ -2,23 +2,18 @@
 #include "macros.h"
 #include "led.h"
 #include "teclas.h"
+#include "secuencias.h"
 
 int main( void )
 {
    boardInit();
-   delay_t myDelay;
-   delayInit(&myDelay, 500);
-   bool_t state = false;
+   struct Secuencia_t control;
+   const gpioMap_t leds[] = {LED1, LED2, LED3};
+   const tick_t tiempos[] = {500, 200, 700};
+   activarSecuencia(&control, &leds, &tiempos);
 
    while( true ) {
-	   if( delayRead(&myDelay) ){
-		   if (state){
-			   encenderLed(LED1);
-		   } else{
-			   apagarLeds();
-		   }
-		   state = !state;
-	   }
+	   actualizarSecuencia(&control);
    }
 
    return 0;
