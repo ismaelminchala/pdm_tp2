@@ -6,14 +6,24 @@
 
 int main( void )
 {
-   boardInit();
+
    struct Secuencia_t control;
-   const gpioMap_t leds[] = {LED1, LED2, LED3};
-   const tick_t tiempos[] = {500, 200, 700};
-   activarSecuencia(&control, &leds, &tiempos);
+   const gpioMap_t leds[] = {LED1, LED2, LED3, LEDR, LEDG, LEDB};
+   const tick_t tiempos[] = {1000, 500, 2000 ,3000, 500, 500};
+   const int8_t count = _countof(leds);
+
+   boardInit();
+   activarSecuencia(&control, &leds, &tiempos, count);
+
 
    while( true ) {
 	   actualizarSecuencia(&control);
+	   if(leerTecla(TEC1)) {
+		   ascendenteSecuencia(&control);
+	   }
+	   if(leerTecla(TEC4)) {
+		   descendenteSecuencia(&control);
+	   }
    }
 
    return 0;

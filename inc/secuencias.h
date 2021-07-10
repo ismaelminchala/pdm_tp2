@@ -14,26 +14,28 @@
 /** Estructura de secuencia de LEDs
  *
  */
-struct Secuencia_t{
-	gpioMap_t* leds;
-	int32_t pos;
-	bool_t  sentido;
-	tick_t* tiempos;
+struct Secuencia_t
+{
+	gpioMap_t *leds;
+	int8_t pos;
+	bool_t sentido;
+	tick_t *tiempos;
 	delay_t myDelay;
-	int32_t len;
+	int8_t len;
 };
 
 /** @brief Función que actualiza el estado de secuencia
  *
- *  @param psecuencia Estructura que contiene:
- *    - puntero para leds
- *    - posición del led activo
- *    - sentido de la secuencia
- *    - puntero a los tiempo de encendido de cada led
+ *  @param psecuencia
  */
-void activarSecuencia(struct Secuencia_t* psecuencia, gpioMap_t *leds, tick_t *tiempos);
+void activarSecuencia(struct Secuencia_t *psecuencia, gpioMap_t *leds, tick_t *tiempos, int8_t cuenta);
 
-void actualizarSecuencia(struct Secuencia_t* psecuencia);
+void actualizarSecuencia(struct Secuencia_t *psecuencia);
 
+void invertirSecuencia(struct Secuencia_t *psecuencia);
+
+void ascendenteSecuencia(struct Secuencia_t *psecuencia);
+
+void descendenteSecuencia(struct Secuencia_t *psecuencia);
 
 #endif /* _SECUENCIAS_H_ */
