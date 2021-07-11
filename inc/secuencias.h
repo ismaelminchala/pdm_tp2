@@ -38,4 +38,5 @@ void ascendenteSecuencia(struct Secuencia_t *psecuencia);
 
 void descendenteSecuencia(struct Secuencia_t *psecuencia);
 
+
 #endif /* _SECUENCIAS_H_ */
