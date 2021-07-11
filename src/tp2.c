@@ -12,8 +12,6 @@ enum estados semaforoAlarma(struct Secuencia_t *control);
 
 int main( void )
 {
-
-   struct Secuencia_t control;
    enum estados estado;
    estado = normal;
    const gpioMap_t ledsNormal[] = {LED3, LED1, LED2};
@@ -48,8 +46,6 @@ int main( void )
 		   estado = semaforoAlarma(&controlAlarma);
 		   break;
 	   }
-
-	   actualizarSecuencia(&control);
    }
    return 0;
 }
@@ -59,7 +55,7 @@ enum estados semaforoNormal(struct Secuencia_t *control){
 	if (leerTecla(TEC2)){
 		estado = desconectado;
 	}
-	actualizarSecuencia(&control);
+	actualizarSecuencia(control);
 	return estado;
 }
 
@@ -68,7 +64,7 @@ enum estados semaforoDesconectado(struct Secuencia_t *control){
 	if (leerTecla(TEC2)){
 		estado = alarma;
 	}
-	actualizarSecuencia(&control);
+	actualizarSecuencia(control);
 	return estado;
 }
 
@@ -77,6 +73,6 @@ enum estados semaforoAlarma(struct Secuencia_t *control){
 	if (leerTecla(TEC2)){
 		estado = normal;
 	}
-	actualizarSecuencia(&control);
+	actualizarSecuencia(control);
 	return estado;
 }
