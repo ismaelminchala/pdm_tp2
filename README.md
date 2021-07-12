@@ -1,17 +1,26 @@
 PdM - Práctica no. 2
+
 Universidad de Buenos Aires
+
 Facultad de Ingeniería
+
 Especialización en sistemas embebidos
+
 Autores: Luis I. Minchala (ismael.minchala@ucuenca.edu.ec)
+
          Gonzalo N. Vaca (vacagonzalo@gmail.com)
 
+
 Resumen
+
 Este proyecto presenta, principalmente, la modularización en funciones, 
 archivos y capas, un proyecto de controlador de secuencias arbitrarias de LEDs. 
 Este proyecto está diseñado para la placa EDU-CIAA-NXP.
 
+
 Dependencias externas:
 sAPI.h
+
 
 Módulos de software del sistema:
  - main.c, main.h
