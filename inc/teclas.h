@@ -3,7 +3,7 @@
  * 
  *  Este archivo contiene los prototipos de funciones que
  *  se utilizan para leer las cuatro teclas de la placa
- *  EDU-CIAA, archivo realizado en el marco de la 
+ *  EDU-CIAA. Este archivo fue realizado en el marco de la
  *  especialización en sistemas embebidos de la Universidad
  *  de Buenos Aires
  * 

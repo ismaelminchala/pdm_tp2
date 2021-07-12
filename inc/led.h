@@ -10,7 +10,6 @@
 #define _LED_H_
 
 #include "macros.h"
-
 #define OSCURIDAD 0
 
 /** @brief Función que apaga todos los LEDs de la placa EDU-CIAA
