@@ -7,6 +7,7 @@
 **Especialización en sistemas embebidos**
 
 **Autor1:** Gonzalo N. Vaca (vacagonzalo@gmail.com)
+
 **Autor2:** Luis I. Minchala (ismael.minchala@ucuenca.edu.ec) 
 
 
